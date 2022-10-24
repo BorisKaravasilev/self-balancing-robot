@@ -1,0 +1,78 @@
+Note: Ours is the XC4411. 
+
+On getting the following error when compiling:
+> esp_client_server:1:10: fatal error: ESP8266WiFi.h: No such file or directory
+Choose the right board (Generic ESP8266)
+
+If you haven't already, install the ESP8266 Boards addon as per the XC3802
+manual located on the product page:
+
+https://jaycar.com.au/p/XC3802
+
+the code in this zipfile is used as an example for our new XC4421 and XC4411
+boards.
+
+
+To write arduino code: 
+-------------------------------------
+Configure the dip switches as shown: 3,4 are on, the others are off.
+
+|-|-|o|o|-|-|-|-| on
+|o|o|-|-|o|o|o|o| off
+|1|2|3|4|5|6|7|8|
+
+for XC4421 select Tools->Board->Arduino Mega (for XC4421) Or Uno (for XC4411)
+
+open arduino.ino and press upload.
+
+
+To write esp code:
+-------------------------------------
+Configure the dip switches as shown: 5,6,7 are on, the others are off.
+
+|-|-|-|-|o|o|o|-| on
+|o|o|o|o|-|-|-|o| off
+|1|2|3|4|5|6|7|8|
+
+for XC4421 select Tools->Board->Generic 8266 Module
+-> If you cannot see it, you did not read the XC3802 Manual!
+
+open esp.ino and press upload; after compiling, when the IDE says "Uploading.."
+You should begin to see ".......________........_____" during this time, press 
+the reset button on the MCU; the ESP should begin to accept
+instructions.
+
+
+To run the example:
+---------------------------------------
+Upload both of the code as above, then configure the switches as shown: (1,2 are on)
+
+|o|o|-|-|-|-|-|-| on
+|-|-|o|o|o|o|o|o| off
+|1|2|3|4|5|6|7|8|
+
+Open up your wireless internet and you should see a new wireless network.
+Connect to it and navigate to http://10.0.0.7, you'll see two hyperlinks
+to turn the arduino L13 led on/off. You should be able to see the device
+interplay between your phone/computer, the ESP, and the arduino.
+
+
+Troubleshooting:
+-----------------------------------------
+
+"upload esp mem failed" in arduino IDE ESP8266 error:
+	* have you selected the right switch config? ensure that 5,6, AND 7, are
+	  switched _ON_
+	* Did you press the MCU Reset button when the IDE says "uploading" ?
+
+"WiFiServer.h not found" or similar not found messages
+	* Did you install the ESP8266 Boards in the Arduino IDE? read the XC3802
+	  manual.
+	* Have you selected the right board for the project? make sure
+	  Tools->Board->Generic8266 board is selected for the ESP project, and
+	  Geniuno is selected for Arduino 
+
+Writing html code is better in proper html files, which can be stored in a "data" folder
+and uploaded automatically, check out "SPIFFS" for more information:
+
+https://randomnerdtutorials.com/esp8266-web-server-spiffs-nodemcu/

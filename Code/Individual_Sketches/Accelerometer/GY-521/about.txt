@@ -1,0 +1,8 @@
+The GY-521 is a accelerometer, gyroscope and temperature reader
+
+Fritzing file provided from:
+https://create.arduino.cc/projecthub/Nicholas_N/how-to-use-the-accelerometer-gyroscope-gy-521-6dfc19
+
+Really good explenations of the code:
+https://www.youtube.com/watch?v=y5X2zwbO6e4&t=1298s
+

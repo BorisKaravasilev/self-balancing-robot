@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Bot</title>
+</head>
+<body>
+    <a href="/delay">Delay</a>
+
+    <div id="arduino-response">
+        <h2>Response from the Arduino</h2>
+        <p id="arduino-response-text"></p>
+    </div>
+
+
+    <script>
+        (function() {
+            // get new data from the Arduino
+            setInterval(function() {
+                fetch('/reading')
+                    .then(response => { return response.text();})
+                    .then(text => {
+                        console.log(text);
+                        document.getElementById('arduino-response-text').textContent = text;
+                });
+            }, 100);
+        })();
+    </script>
+</body>
+</html>
