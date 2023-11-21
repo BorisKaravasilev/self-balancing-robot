@@ -12,7 +12,7 @@ The full report can be found [here](./report.pdf).
 
 ## Introduction
 
-A self-balancing robot is a robot which has an unstable equilibrium and works as an inverted pendulum, which has its center of mass placed above its pivot point. Such a robot must actively correct itself if it is not to fall over. During this project we designed, assembled and tested such robot and the result is described in our report.
+In the second year of my master's degree, I took the specialization course "Advanced Robotics". In this course, me and my two friends built a self-balancing robot. We implemented and calibrated a PID controller on an Arduino. We also designed the entire body of the robot in Fusion 360 and used a combination of 3D printing and laser cutting to manufacture the robot. We tested the robot in various conditions and documented the results in a report.
 
 ## Design Brought To Reality
 
